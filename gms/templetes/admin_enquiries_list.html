@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block main %}
+    
+    <h2 class="mb-3">Equiries List</h2>
+        <table class="table table-bordered table-striped w-75">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                    <th>Created At</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for enquiry in enquiries %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{enquiry.name}}</td>
+                    <td>{{enquiry.email}}</td>
+                    <td>{{enquiry.mobile}}</td>
+                    <td style="max-width: 250px;">{{enquiry.message}}</td>
+                    <td>{{enquiry.created_at}}</td>
+                    <td>{{enquiry.status}}</td>
+                    
+                    <td>
+                        <form action="{% url 'admin_enquiry_update_status' enquiry.id %}" method="post">
+                            {% csrf_token %}
+                            <select name="status" id="" class="form-select form-select-sm mb-2">
+                                <option value="NEW" {% if enquiry.status == 'NEW' %} selected {% endif %}>NEW</option>
+                                <option value="SEEN" {% if enquiry.status == 'SEEN' %} selected {% endif %}>SEEN</option>
+                                <option value="RESOLVED" {% if enquiry.status == 'RESOLVED' %} selected {% endif %}>RESOLVED</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-primary w-100">Update</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

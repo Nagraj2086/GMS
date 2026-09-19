@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<!-- Hero Section -->
+<section class="py-5 px-5 bg-dark text-white rounded mb-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+
+            <div class="col-md-7">
+                <h1 class="display-4 fw-bold">About RD Gym</h1>
+
+                <p class="lead mt-3">
+                    Welcome to RD Gym, a modern fitness center supported by
+                    a smart and efficient Gym Management System.
+                </p>
+
+                <p class="text-light">
+                    Our system helps members and administrators manage
+                    memberships, payments, workouts, trainers, attendance,
+                    and feedback in one convenient platform.
+                </p>
+
+                <a href="{% url 'member_membership' %}"
+                   class="btn btn-primary mt-2">
+                    View Membership
+                </a>
+            </div>
+
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+                <i class="fa-solid fa-dumbbell fa-8x"></i>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- About RD Gym -->
+<section class="mb-5">
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Why RD Gym?</h2>
+            <p class="text-muted">
+                Everything you need to manage your fitness journey.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="fa-solid fa-users fa-3x text-primary mb-3"></i>
+
+                        <h4>Member Management</h4>
+
+                        <p class="text-muted">
+                            Manage member profiles, personal details,
+                            membership information, and trainer assignments
+                            efficiently.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="fa-solid fa-credit-card fa-3x text-primary mb-3"></i>
+
+                        <h4>Payment Management</h4>
+
+                        <p class="text-muted">
+                            Record payments, monitor payment status,
+                            track total payments, and calculate remaining
+                            membership amounts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="fa-solid fa-dumbbell fa-3x text-primary mb-3"></i>
+
+                        <h4>Workout Plans</h4>
+
+                        <p class="text-muted">
+                            Provide members with personalized workout plans
+                            and keep their fitness activities organized.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Features -->
+<section class="bg-light py-5 rounded mb-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Features</h2>
+            <p class="text-muted">
+                A complete solution for everyday gym management.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="text-center">
+                    <i class="fa-solid fa-id-card fa-2x text-primary mb-3"></i>
+                    <h5>Membership</h5>
+                    <p class="text-muted small">
+                        Manage membership plans and validity.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6">
+                <div class="text-center">
+                    <i class="fa-solid fa-person-running fa-2x text-primary mb-3"></i>
+                    <h5>Trainers</h5>
+                    <p class="text-muted small">
+                        Manage trainers and member assignments.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6">
+                <div class="text-center">
+                    <i class="fa-solid fa-calendar-check fa-2x text-primary mb-3"></i>
+                    <h5>Attendance</h5>
+                    <p class="text-muted small">
+                        Keep track of member attendance.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6">
+                <div class="text-center">
+                    <i class="fa-solid fa-comments fa-2x text-primary mb-3"></i>
+                    <h5>Feedback</h5>
+                    <p class="text-muted small">
+                        Collect and review member feedback.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Member & Admin -->
+<section class="mb-5">
+
+    <div class="row g-4">
+
+        <!-- Member -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-solid fa-user fa-2x text-primary me-3"></i>
+                        <h3 class="mb-0">For Members</h3>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            View membership details
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Check payment information
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            View workout plans
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            View trainer information
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Check attendance
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Submit feedback
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Admin -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-solid fa-user-shield fa-2x text-primary me-3"></i>
+                        <h3 class="mb-0">For Administrators</h3>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Manage members
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Manage membership plans
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Manage trainers
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Record member payments
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Assign workout plans
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success me-2"></i>
+                            Review member feedback
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Mission -->
+<section class="py-5 bg-primary text-white rounded mb-4">
+    <div class="container text-center">
+
+        <i class="fa-solid fa-bullseye fa-3x mb-3"></i>
+
+        <h2 class="fw-bold">Our Mission</h2>
+
+        <p class="lead mx-auto" style="max-width: 800px;">
+            Our mission is to make gym management simple, organized,
+            and accessible while helping members stay consistent with
+            their fitness goals.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- Bottom CTA -->
+<section class="text-center py-4">
+
+    <h3 class="fw-bold">Train. Track. Transform.</h3>
+
+    <p class="text-muted">
+        RD Gym — your fitness journey, managed better.
+    </p>
+
+</section>
+
+{% endblock %}

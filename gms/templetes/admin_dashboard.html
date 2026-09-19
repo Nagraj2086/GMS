@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block main %}
+<h2 class="mb-4">Admin Dashboard</h2>
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="card text-bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Total Members</h5>
+                <p class="fs-3">{{total_members}}</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card text-bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Total Memberships</h5>
+                <p class="fs-3">{{active_membership}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card text-bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Today Registrations</h5>
+                <p class="fs-3">{{total_registrations}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">Pending Payments</h5>
+                <p class="fs-3">{{pending_payments}}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="my-4">
+        <div class="d-flex flex-wrap gap-2" >
+            <a href="{% url 'admin_members_list' %}" class="btn btn-outline-primary">Manage Members</a>
+            <a href="{% url 'admin_plans_list' %}" class="btn btn-outline-secondary">Manage Plans</a>
+            <a href="{% url 'admin_trainers_list' %}" class="btn btn-outline-info">Manage Trainers</a>
+            <a href="{% url 'admin_payments_list' %}" class="btn btn-outline-danger">Manage Payments</a>
+            <a href="{% url 'admin_enquiries_list' %}" class="btn btn-outline-success">Manage Enquiries</a>
+
+
+        </div>
+
+    </div>
+</div>
+    
+{% endblock %}

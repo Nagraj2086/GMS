@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h2 class="mb-3">Provide Feedback</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    Submit Feedback
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3 ">
+                            <label for="message" class="form-label ">Your FeedBack</label>
+                            <textarea name="message" id="" rows="3" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>My Previous Feedback</h4>
+            <hr>
+            {% for feedback in feedbacks %}
+                <div class="mb-3 p-2 border rounded bg-white">
+                    <div class="small text-muted">
+                        {{feedback.created_at}}
+                    </div>
+                    <div>{{feedback.message}}</div>
+                </div>
+            {% empty %}
+            <p class="text-muted">No Feedback submitted yet.</p>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

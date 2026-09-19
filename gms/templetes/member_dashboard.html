@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h2>Welcome, {{request.user.username}}!</h2>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="card text-bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Total Attendance</h5>
+                    <p class="fs-3">{{total_attendance}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Payments</h5>
+                    <p class="fs-3">{{total_payments}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Workout Plans</h5>
+                    <p class="fs-3">{{workout_count}}</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <hr>
+    <a href="{% url 'member_profile' %}" class="btn btn-outline-primary">My Profile</a>
+    <a href="{% url 'member_membership' %}" class="btn btn-outline-secondary">My Membership</a>
+    <a href="{% url 'member_attendance' %}" class="btn btn-outline-success">My Attendance</a>
+    <a href="{% url 'member_payments' %}" class="btn btn-outline-info">My Payments</a>
+    <a href="{% url 'member_workout_plans' %}" class="btn btn-outline-warning">My Workout Plans</a>
+    
+
+{% endblock %}

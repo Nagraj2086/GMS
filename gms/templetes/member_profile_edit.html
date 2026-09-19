@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h2 class="mb-3">Edit Profile</h2>
+    <form action="" method="post" class="row g-3 w-75">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="full_name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" value="{{member.full_name}}">
+        </div>
+        <div class="col-md-6">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{member.user.username}}">
+        </div>
+        <div class="col-md-6">
+            <label for="mobile" class="form-label">Phone</label>
+            <input type="number" class="form-control" id="mobile" name="mobile" value="{{member.mobile}}">
+        </div>
+        <div class="col-md-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{member.age}}">
+        </div>
+        <div class="col-md-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select name="gender" id="gender" class="form-select">
+                <option value="MALE" {% if member.gender == 'Male' %} selected {% endif %}>Male</option>
+                <option value="FEMALE" {% if member.gender == 'Female' %} selected {% endif %}>Female</option>
+                <option value="OTHER" {% if member.gender == 'Other' %} selected {% endif %}>Other</option>
+            </select>
+        </div>
+
+        <div class="col-md-12">
+            <label for="address" class="form-label">Address</label>
+            <textarea type="text" class="form-control" id="address" name="address">{{member.address}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="{% url 'member_profile' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

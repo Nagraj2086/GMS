@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block main %}
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>WorkOut / Deit Plan</h2>
+        <a href="{% url 'admin_workout_plan_add' %}" class="btn btn-primary">Add Workout / Deit Plans</a>
+    </div>
+    <form action="" class="row g-2 mb-3" method="get">
+        
+        <div class="col-md-4">
+            <select name="member_id" id="" class="form-select">
+                <option value="">select Member</option>
+                {% for member in members  %}
+                <option value="{{member.id}}">{{member.full_name}} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end" >
+            <button type="submit" class="btn btn-secondary w-100">Filter</button>
+        </div>
+    </form>
+    <div class="row g-3">
+        {% for wp in workout_plans %}
+        <div class="col-md-6">
+            <div class="card shodow-sm">
+                <div class="card-header bg-primary text-white d-flex justify-content-between">
+                    <span>{{wp.title}}</span>
+                    <small>{{wp.member.full_name}}</small>
+                </div>
+                <div class="card-body">
+                    <p class="small text-muted mb-1">
+                        {{wp.created_at}}
+                    </p>
+                    <p style="white-space: pre-line;">
+                        {{wp.description}}
+                    </p>
+                    <form action="{% url 'admin_workout_plan_delete' wp.id %}" method="post" onsubmit="return confirm('Delete this workout Plan?')">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+        
+{% endblock %}
